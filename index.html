@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="TIGeR: Unified Text-to-Image Generation and Retrieval">
-  <meta name="keywords" content="Text-to-Image Generation, Image-Text Matching, Generative Retrieval, Multimodal Large Language Models">
+        content="VINCIE: Unlocking In-context Image Editing from Video">
+  <meta name="keywords" content="In-context Image Editing, Video Data, Scaling">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TIGeR</title>
+  <title>VINCIE</title>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,7 +22,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
-  <link rel="icon" href="./static/images/logo.png">
+  <!-- <link rel="icon" href="./static/images/logo.png"> -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -45,43 +45,50 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">TIGeR: Unified Text-to-Image Generation and Retrieval</h1>
+          <h1 class="title is-1 publication-title">VINCIE: Unlocking In-context Image Editing from Video</h1>
           <!-- <h1 class="title is-2 publication-title">for Text-to-Image Generation</h1> -->
           <!-- <h1 class="title is-2 publication-title" style="margin-top: -17px;">for Text-to-Image Generation</h1> --> 
           <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <a href="#">Leigang Qu</a><sup>1</sup>,</span>
+              <a href="https://leigang-qu.github.io/">Leigang Qu</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="#">Haochuan Li</a><sup>1</sup>,</span>
+              <a href="https://klauscc.github.io/">Feng Cheng</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://wangt-cn.github.io/">Tan Wang</a><sup>2*</sup>,</span>
+              <a href="https://ziyanyang.github.io/">Ziyan Yang</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://wenjiewwj.github.io/">Wenjie Wang</a><sup>1*</sup>,</span>
+              <a href="https://kevinz8866.github.io/">Qi Zhao</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://liyongqi67.github.io/">Yongqi Li</a><sup>3</sup>,
+              <a href="https://scholar.google.com/citations?user=EDWUw7gAAAAJ&hl=en">Shanchuan Lin</a><sup>2</sup>,</span>
+            <br>
+            <span class="author-block">
+              <a href="https://seasonsh.github.io/">Yichun Shi</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://liqiangnie.github.io/">Liqiang Nie</a><sup>4</sup>,
+              <a href="https://yl3800.github.io/">Yicong Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://wenjiewwj.github.io/">Wenjie Wang</a><sup>3</sup>,
             </span>
             <span class="author-block">
               <a href="https://www.chuatatseng.com/">Tat-Seng Chua</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.lujiang.info/index.html">Lu Jiang</a><sup>2</sup>,
             </span>
           </div>
 
           <div class="is-size-6 publication-authors">
             <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6 </b>1. NExT++ Lab, National University of Singapore</span>
             <br>
-            <span class="author-block"><b style="color:#00f295cc; font-weight:normal">&#x25B6 </b>2. Nanyang Technological University</span>
+            <span class="author-block"><b style="color:#00f295cc; font-weight:normal">&#x25B6 </b>2. ByteDance Seed</span>
             <br>
-            <span class="author-block"><b style="color:hsla(350, 78%, 60%, 0.815); font-weight:normal">&#x25B6 </b>3. Hong Kong Polytechnic University</span>
-            <br>
-            <span class="author-block"><b style="color:#00A4EF; font-weight:normal">&#x25B6 </b>4. Harbin Institute of Technology (Shenzhen)</span>
+            <span class="author-block"><b style="color:hsla(350, 78%, 60%, 0.815); font-weight:normal">&#x25B6 </b>3. University of Science and Technology of China</span>
             
           </div>
 
           <div class="is-size-6 publication-authors">
             <!-- <span class="author-block" style="font-size: 15px;"><sup>*</sup>Equal Contribution</span> &nbsp; &nbsp; &nbsp; &nbsp; -->
-            <span class="author-block" style="font-size: 15px;"><sup>*</sup>Correspondence</span>
+            <span class="author-block" style="font-size: 15px;"><sup>*</sup>Work was done during Leigang Qu’s internship at ByteDance Seed</span>
             
           </div>
 
@@ -89,7 +96,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2406.05814"
+                <a href="https://arxiv.org/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -121,7 +128,7 @@
 
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/LgQu/TIGeR"
+                <a href="https://github.com/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -198,7 +205,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            How humans can efficiently and effectively acquire images has always been a perennial question. A typical solution is text-to-image retrieval from an existing database given the text query; however, the limited database typically lacks creativity. By contrast, recent breakthroughs in text-to-image generation have made it possible to produce fancy and diverse visual content, but it faces challenges in synthesizing knowledge-intensive images. In this work, we rethink the relationship between text-to-image generation and retrieval and propose a unified framework in the context of Multimodal Large Language Models (MLLMs). Specifically, we first explore the intrinsic discriminative abilities of MLLMs and introduce a generative retrieval method to perform retrieval in a training-free manner. Subsequently, we unify generation and retrieval in an autoregressive generation way and propose an autonomous decision module to choose the best-matched one between generated and retrieved images as the response to the text query. Additionally, we construct a benchmark called TIGeR-Bench, including creative and knowledge-intensive domains, to standardize the evaluation of unified text-to-image generation and retrieval. Extensive experimental results on TIGeR-Bench and two retrieval benchmarks, i.e., Flickr30K and MS-COCO, demonstrate the superiority and effectiveness of our proposed method. 
+            In-context image editing aims to modify images based on a contextual sequence comprising text and previously generated images. Existing methods typically depend on task-specific pipelines and expert models (e.g., segmentation and inpainting) to curate training data. In this work, we explore whether an in-context image editing model can be learned directly from videos. We introduce a scalable approach to annotate videos as interleaved multimodal sequences. To effectively learn from this data, we design a block-causal diffusion transformer trained on three proxy tasks: next-image prediction, current segmentation prediction, and next-segmentation prediction. Additionally, we propose a novel multi-turn image editing benchmark to advance research in this area. Extensive experiments demonstrate that our model exhibits strong in-context image editing capabilities and achieves state-of-the-art results on two multi-turn image editing benchmarks. Despite being trained exclusively on videos, our model also shows promising abilities in multi-concept composition, story generation, and chain-of-editing applications.
           </p>
           <!-- <p>
             In this work, we strive to synthesize high-fidelity images that are semantically aligned with a given textual prompt without any guidance.
@@ -258,58 +265,37 @@
       </div>
     </div> -->
 
-    <!-- Framework -->
-    <div class="columns is-centered has-text-justified">
-      <!-- <div class="column is-full-width"> -->
+    <!-- <div class="columns is-centered has-text-justified">
       <div class="column is-three-fifths">
         <h2 class="title is-3">TIGeR</h2>
-
         <div class="content has-text-justified">
           <p>
             We consider both <font color="#4672C4"> <b>creative</b> </font> domains and <font color="#ED7D31"> <b>knowledge-intensive</b> </font> domains for general image acquisition towards <b>unified Text-to-Image Generation and Retrieval (TIGeR)</b>, and build the <b>TIGeR-Bench</b> including 8 domains for the unified comprehensive evaluation. 
-            <!-- <ol>
-              <li>
-                <b>Text-to-layout induction module</b> infers a coarse-grained layout via an LLM conditioned the given textual prompt.
-              </li>
-              <li>
-                <b>Layout-guided image generation module</b> synthesizes the final image based on the prompt and the generated layout, .
-              </li>
-            </ol> -->
           </p>
           <img class="columns is-centered has-text-justified" src="./static/images/key_idea.png" alt="Teaser" width="100%" style="margin:0 auto">
         </div>
         <br/>
 
       </div>
-    </div>
+    </div> -->
 
     <!-- Framework -->
-    <div class="columns is-centered has-text-justified">
-      <!-- <div class="column is-full-width"> -->
+    <!-- <div class="columns is-centered has-text-justified">
       <div class="column is-three-fifths">
         <h2 class="title is-3">Framework</h2>
-
         <div class="content has-text-justified">
           <p>
             Overview of the framework to unify text-to-image generation and retrieval. Images from the database are first tokenized into discrete codes and a lookup table is maintained for the correspondence between discrete codes and images. The given prompt is first fed into a MLLM and Forward Beam Search is performed to retrieve and generate images in parallel. The prompt and obtained images are then fed into the same MLLM for Reverse Re-Ranking and Decision-making.
-            <!-- <ol>
-              <li>
-                <b>Text-to-layout induction module</b> infers a coarse-grained layout via an LLM conditioned the given textual prompt.
-              </li>
-              <li>
-                <b>Layout-guided image generation module</b> synthesizes the final image based on the prompt and the generated layout, .
-              </li>
-            </ol> -->
           </p>
           <img class="columns is-centered has-text-justified" src="./static/images/framework.png" alt="Teaser" width="100%" style="margin:0 auto">
         </div>
         <br/>
 
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="columns is-centered has-text-justified">
+    <!-- <div class="columns is-centered has-text-justified">
       <div class="column is-three-fifths">
         <h2 class="title is-3">Experiments</h2>
 
@@ -382,7 +368,7 @@
 
 
       </div>
-    </div>
+    </div> -->
 
 
     <!-- <div class="columns is-centered">
