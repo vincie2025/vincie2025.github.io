@@ -166,6 +166,7 @@
   </div>
 </section>
 
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
 <!--    <div class="hero-body">-->
@@ -194,9 +195,8 @@
 
 
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -204,21 +204,11 @@
           <p>
             In-context image editing aims to modify images based on a contextual sequence comprising text and previously generated images. Existing methods typically depend on task-specific pipelines and expert models (e.g., segmentation and inpainting) to curate training data. In this work, we explore whether an in-context image editing model can be learned directly from videos. We introduce a scalable approach to annotate videos as interleaved multimodal sequences. To effectively learn from this data, we design a block-causal diffusion transformer trained on three proxy tasks: next-image prediction, current segmentation prediction, and next-segmentation prediction. Additionally, we propose a novel multi-turn image editing benchmark to advance research in this area. Extensive experiments demonstrate that our model exhibits strong in-context image editing capabilities and achieves state-of-the-art results on two multi-turn image editing benchmarks. Despite being trained exclusively on videos, our model also shows promising abilities in multi-concept composition, story generation, and chain-of-editing applications.
           </p>
-          <!-- <p>
-            In this work, we strive to synthesize high-fidelity images that are semantically aligned with a given textual prompt without any guidance.
-            Toward this end, we propose a coarse-to-fine paradigm to achieve layout planning and image generation.
-            Concretely, we first generate the coarse-grained layout conditioned on a given textual prompt via in-context learning based on Large Language Models.
-            Afterward, we propose a fine-grained object-interaction diffusion method to synthesize high-faithfulness images conditioned on the prompt and the automatically generated layout.
-            Extensive experiments demonstrate that our proposed method outperforms the state-of-the-art models in terms of cross-modal text-layout alignment and high-faithfulness image generation.
-          </p> -->
-
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -226,11 +216,21 @@
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div> -->
-    <!--/ Paper video. -->
+    </div>
   </div>
-</section>
+</section> -->
 
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-three-fifths">
+        <div class="content has-text-justified">
+          <img class="columns is-centered has-text-justified" src="./static/images/cases.jpeg" alt="Teaser" width="100%" style="margin:0 auto">
+        </div>
+        <p>
+          In-context image editing aims to modify images based on a contextual sequence comprising text and previously generated images. Existing methods typically depend on task-specific pipelines and expert models (e.g., segmentation and inpainting) to curate training data. In this work, we explore whether an in-context image editing model can be learned directly from videos. We introduce a scalable approach to annotate videos as interleaved multimodal sequences. To effectively learn from this data, we design a block-causal diffusion transformer trained on three proxy tasks: next-image prediction, current segmentation prediction, and next-segmentation prediction. Additionally, we propose a novel multi-turn image editing benchmark to advance research in this area. Extensive experiments demonstrate that our model exhibits strong in-context image editing capabilities and achieves state-of-the-art results on two multi-turn image editing benchmarks. Despite being trained exclusively on videos, our model also shows promising abilities in multi-concept composition, story generation, and chain-of-editing applications.
+        </p>
+        <br/>
+      </div>
+    </div>
 
 <!-- <section class="section">
   <div class="container is-max-desktop">
@@ -262,19 +262,40 @@
       </div>
     </div> -->
 
-    <!-- <div class="columns is-centered has-text-justified">
+    <div class="columns is-centered has-text-justified">
       <div class="column is-three-fifths">
-        <h2 class="title is-3">TIGeR</h2>
+        <h2 class="title is-3">Data Construction Pipeline</h2>
         <div class="content has-text-justified">
           <p>
-            We consider both <font color="#4672C4"> <b>creative</b> </font> domains and <font color="#ED7D31"> <b>knowledge-intensive</b> </font> domains for general image acquisition towards <b>unified Text-to-Image Generation and Retrieval (TIGeR)</b>, and build the <b>TIGeR-Bench</b> including 8 domains for the unified comprehensive evaluation. 
+            We use a Vision-Language Model (VLM) to annotate the visual transitions, and then prompt GroundingDINO and SAM2 with the generated textual descriptions to extract segmentation masks for the edited regions.
+            <!-- We consider both <font color="#4672C4"> <b>creative</b> </font> domains and <font color="#ED7D31"> <b>knowledge-intensive</b> </font> domains for general image acquisition towards <b>unified Text-to-Image Generation and Retrieval (TIGeR)</b>, and build the <b>TIGeR-Bench</b> including 8 domains for the unified comprehensive evaluation.  -->
           </p>
-          <img class="columns is-centered has-text-justified" src="./static/images/key_idea.png" alt="Teaser" width="100%" style="margin:0 auto">
+          <img class="columns is-centered has-text-justified" src="./static/images/data_pipe.jpeg" alt="Teaser" width="100%" style="margin:0 auto">
+          <p>
+            Examples of interleaved image-text session data are shown below. 
+          </p>
+          <img class="columns is-centered has-text-justified" src="./static/images/app_ann.jpeg" alt="Teaser" width="95%" style="margin:0 auto">
+          <img class="columns is-centered has-text-justified" src="./static/images/app_ann2.jpeg" alt="Teaser" width="95%" style="margin:0 auto">
         </div>
         <br/>
 
       </div>
-    </div> -->
+    </div>
+
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-three-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            We apply a Diffusion Transformer (DiT) framework to learn from the multimodal interleaved context, through three tasks including Next Image Prediction (NIP), Current Segmentation Prediction (CSP), and Next Segmentation Prediction (NSP). Losses are only computed on noised tokens. 
+            <!-- We consider both <font color="#4672C4"> <b>creative</b> </font> domains and <font color="#ED7D31"> <b>knowledge-intensive</b> </font> domains for general image acquisition towards <b>unified Text-to-Image Generation and Retrieval (TIGeR)</b>, and build the <b>TIGeR-Bench</b> including 8 domains for the unified comprehensive evaluation.  -->
+          </p>
+          <img class="columns is-centered has-text-justified" src="./static/images/framework.jpeg" alt="Teaser" width="100%" style="margin:0 auto">
+        </div>
+        <br/>
+
+      </div>
+    </div>
 
     <!-- Framework -->
     <!-- <div class="columns is-centered has-text-justified">
@@ -290,6 +311,51 @@
 
       </div>
     </div> -->
+
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-three-fifths">
+        <h2 class="title is-3">Abilities Unlocked by Learning from Videos</h2>
+        <div class="content has-text-justified">
+        <h2 class="title is-4">1. Multi-turn Image Editing</h2>
+          <p>
+            Qualitative comparison between our method (w/ SFT on <a href="https://huggingface.co/datasets/TIGER-Lab/OmniEdit-Filtered-1.2M">OmniEdit</a>) and recent baselines (<a href="https://arxiv.org/abs/2404.09990">HQ-Edit</a>, <a href="https://arxiv.org/abs/2407.05282">UltraEdit</a>, <a href="https://arxiv.org/abs/2409.11340">OmniGen</a>, and <a href="https://platform.openai.com/docs/models/gpt-image-1">GPT-4o (GPT Image 1)</a>) on the proposed MSE-Bench.
+          </p>
+          <!-- <img class="columns is-centered has-text-justified" src="./static/images/app_comp_baselines.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+          <img class="columns is-centered has-text-justified" src="./static/images/app_comp_baselines2.jpeg" alt="Teaser" width="90%" style="margin:0 auto"> -->
+          <img class="columns is-centered has-text-justified" src="./static/images/app_comp_baselines3.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+          <img class="columns is-centered has-text-justified" src="./static/images/app_comp_baselines4.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+
+        <h2 class="title is-4">2. Multi-concept Composition</h2>
+          <p>
+            Zero-shot qualitative results for multi-concept composition (without fine-tuning on downstream task-specific datasets).
+          </p>
+          <img class="columns is-centered has-text-justified" src="./static/images/app_multi_concept.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+
+        <h2 class="title is-4">3. Chain-of-Editing</h2>
+          <p>
+            Chain-of-Editing (CoE): first generating the segmentation map of the current image (<i>i.e.</i>, grounding) or/and the next image (<i>i.e.</i>, layout planning), and then generating the image. 
+          </p>
+          <img class="columns is-centered has-text-justified" src="./static/images/app_coe.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+          <p>
+            Qualitative comparison between w/o CoE and w/ CoE.
+          </p>
+          <img class="columns is-centered has-text-justified" src="./static/images/app_comp_coe.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+        
+        <h2 class="title is-4">4. Story Keyframe Generation</h2>
+          <img class="columns is-centered has-text-justified" src="./static/images/app_story.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+        
+        <h2 class="title is-4">5. Drag-based Image Editing</h2>
+          <p>
+            In this setting, users first provide an editing prompt to localize the RoE. Then, drag operations are applied to perform geometric transformations (<i>e.g.</i>, object displacement, scaling, and rotation) of the RoE. The transformed segmentation map driven by the transformation is incorporated into the context, allowing the model to generate a target image that adheres to the specified edits.
+          </p>
+          <img class="columns is-centered has-text-justified" src="./static/images/app_drag.jpeg" alt="Teaser" width="90%" style="margin:0 auto">
+
+        </div>
+        <br/>
+
+      </div>
+    </div>
+    
 
 
 
@@ -309,19 +375,50 @@
 </section>
 
 
-<!-- <section class="section" id="BibTeX">
+
+
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{qu2024discriminative,
-      title={Discriminative Probing and Tuning for Text-to-Image Generation},
-      author={Qu, Leigang and Wang, Wenjie and Li, Yongqi and Zhang, Hanwang and Nie, Liqiang and Chua, Tat-Seng},
-      journal={arXiv preprint arXiv:2403.04321},
-      year={2024}
-    }
+
+    <!-- BibTeX Block -->
+    <pre id="bibtex"><code>@article{qu2025vincie,
+    title={VINCIE: Unlocking In-context Image Editing from Video},
+    author={Qu, Leigang and Cheng, Feng and Yang, Ziyan and Zhao, Qi and Lin, Shanchuan and Shi, Yichun and Li, Yicong and Wang, Wenjie and Chua, Tat-Seng and Jiang, Lu},
+    journal={arXiv preprint arXiv:2506.10941},
+    year={2025}
+  }
 </code></pre>
+
+    <!-- Centered Copy Button -->
+    <div class="has-text-centered" style="margin-top: 15px;">
+      <button class="button is-link custom-size" onclick="copyBibtex()">
+        📋 Copy BibTeX
+      </button>
+    </div>
   </div>
-</section> -->
-  
+</section>
+
+<style>
+/* Custom button size */
+button.custom-size {
+  font-size: 0.9rem;   /* between small (0.75rem) and medium (1rem) */
+  padding: 0.5em 1.25em;  /* tweak padding */
+  border-radius: 6px;     /* optional: softer corners */
+}
+</style>
+
+<script>
+function copyBibtex() {
+  const bibtex = document.getElementById("bibtex").innerText;
+  navigator.clipboard.writeText(bibtex).then(() => {
+    alert("✅ BibTeX copied to clipboard!");
+  });
+}
+</script>
+
+
+
 
 <footer class="footer">
   <div class="container">
